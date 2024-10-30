@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bg color changer</title>
+    <style>
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- #it will change bg color of body when you click on strat and stop on color after clicking stop button -->
+    <h1>Click on Start to Change Colour</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let stop;
+//following function is used to generate random numbers for further use
+    function randomColor() {
+      const hex = "123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hex[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    document.querySelector("#start").addEventListener("click", function () {
+     stop= setInterval(function () {
+        document.body.style.backgroundColor = randomColor();
+        console.log(randomColor());
+      }, 1000);
+    });
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(stop);
+    })
+  </script>
+</html>
