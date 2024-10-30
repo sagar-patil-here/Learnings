@@ -1,3 +1,3 @@
 # Learnings
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/sagar-patil-here/Learnings)
+This is my learning repo here I put my practice code file of new learnings
