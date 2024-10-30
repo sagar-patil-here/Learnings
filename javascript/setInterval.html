@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>The page is running</h1>
+    <button id="Start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="clear">Clear Console</button>
+  </body>
+  <script>
+    let stopp;
+    const print = function () {
+      console.log('started printing', Date.now());
+    };
+    document.querySelector('#Start').addEventListener('click', function () {
+      if (stopp) {
+        clearInterval(stopp);
+      }
+      stopp = setInterval(print, 2000);
+    });
+    document.querySelector('#stop').addEventListener('click', function () {
+      clearInterval(stopp);
+    });
+    document.querySelector('#clear').addEventListener('click', function () {
+      console.clear();
+    });
+  </script>
+</html>
